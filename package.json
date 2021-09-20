@@ -10,6 +10,7 @@
     "prerender-node": "^3.2.1"
   },
   "scripts": {
-    "prerender": "node index.js"
+    "prerender": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   }
 }
