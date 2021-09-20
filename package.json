@@ -10,7 +10,12 @@
     "prerender-node": "^3.2.1"
   },
   "scripts": {
-    "prerender": "node index.js",
+    "start": "cd backend && node server",
+    "nodmon": "cd backend && nodemon server.js",
+    "server": "cd backend && nodemon server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prerender": "cd backend && node index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   }
 }
